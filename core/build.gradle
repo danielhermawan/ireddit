@@ -1,0 +1,86 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion buildInfo.compileSdk
+
+    defaultConfig {
+        minSdkVersion buildInfo.minSdk
+        targetSdkVersion buildInfo.compileSdk
+        versionCode buildInfo.versionCode
+        versionName buildInfo.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    // Android support party libraries
+    api libraries.kotlinStdlib
+    api libraries.appCompat
+    api libraries.recyclerView
+    api libraries.design
+    api libraries.vector
+    api libraries.constraintLayout
+    api libraries.annotations
+
+    // architecture component libraries
+    api  libraries.lifecycle
+    kapt libraries.lifecycleCompiler
+    api  libraries.livedataStream
+    api  libraries.navigationFragment
+    api  libraries.navigationUi
+    api  libraries.workManager
+
+    // room libraries
+    api  libraries.room
+    kapt libraries.roomCompiler
+    api  libraries.roomRxjava
+
+    // dagger libraries
+    api  libraries.dagger
+    kapt libraries.daggerProcessor
+
+    // rx libraries
+    api libraries.rxjava
+    api libraries.rxandroid
+    api libraries.rxkotlin
+    api libraries.rxRelay
+
+    // network libraries
+    api libraries.okhttp
+    api libraries.retrofit
+    api libraries.retrofitGsonConverter
+    api libraries.retrofitRxjava
+
+    api libraries.glide
+    kapt libraries.glideCompiler
+    api libraries.stetho
+    api libraries.stethoOkhttp
+
+    api libraries.timber
+    api libraries.threeTenAbp
+
+    // Testing libraries
+    testImplementation libraries.junit
+    testImplementation libraries.arcTesting
+    testImplementation libraries.roomTesting
+    androidTestImplementation libraries.testRunner
+    androidTestImplementation libraries.espressoCore
+    androidTestImplementation libraries.navigationTesting
+    androidTestImplementation libraries.workerTesting
+}

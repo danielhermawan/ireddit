@@ -1,0 +1,105 @@
+def versions = [
+        plugin   : [
+                androidGradle: '3.2.0-rc02',
+                kotlin       : "1.2.61"
+        ],
+        libraries: [
+                // code library
+                supportLibrary       : "1.0.0-alpha1",
+                architectureComponent: "2.0.0-beta01",
+                room                 : "2.0.0-beta01",
+                navVersion           : "1.0.0-alpha01",
+                workManager          : "1.0.0-alpha01",
+                constraintLayout     : "1.1.2",
+                dagger               : "2.17",
+                rxjava               : "2.1.7",
+                rxkotlin             : "2.2.0",
+                rxandroid            : "2.0.1",
+                rxRelay              : "2.0.0",
+                okhttp               : "3.9.1",
+                retrofit             : "2.4.0",
+                retrofitRxjava       : "2.4.0",
+                stetho               : "1.5.0",
+                timber               : "4.6.0",
+                glide                : "4.4.0",
+                threeTenAbp          : "1.1.0",
+
+                // testing library
+                junit                : "4.12",
+                testRunner           : "1.1.0-alpha1",
+                espressoCore         : "3.1.0-alpha1"
+        ]
+]
+
+ext.buildInfo = [
+        appId      : "co.folto.ireddit",
+        minSdk     : 21,
+        compileSdk : 28,
+        targetSdk  : 28,
+        versionCode: 1,
+        versionName: "1.0"
+]
+
+ext.gradlePlugin = [
+        androidGradle: "com.android.tools.build:gradle:$versions.plugin.androidGradle",
+        kotlin       : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.plugin.kotlin"
+]
+
+ext.libraries = [
+        // android core library
+        kotlinStdlib         : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.plugin.kotlin",
+        appCompat            : "androidx.appcompat:appcompat:$versions.libraries.supportLibrary",
+        recyclerView         : "androidx.recyclerview:recyclerview:$versions.libraries.supportLibrary",
+        design               : "com.google.android.material:material:$versions.libraries.supportLibrary",
+        vector               : "androidx.vectordrawable:vectordrawable:$versions.libraries.supportLibrary",
+        constraintLayout     : "androidx.constraintlayout:constraintlayout:$versions.libraries.constraintLayout",
+        annotations          : "androidx.annotation:annotation:$versions.libraries.supportLibrary",
+
+        // android architecture component
+        lifecycle            : "androidx.lifecycle:lifecycle-extensions:$versions.libraries.architectureComponent",
+        lifecycleCompiler    : "androidx.lifecycle:lifecycle-compiler:$versions.libraries.architectureComponent",
+        livedataStream       : "androidx.lifecycle:lifecycle-reactivestreams-ktx:$versions.libraries.architectureComponent",
+        navigationFragment   : "android.arch.navigation:navigation-fragment-ktx:$versions.libraries.navVersion",
+        navigationUi         : "android.arch.navigation:navigation-ui-ktx:$versions.libraries.navVersion",
+        workManager          : "android.arch.work:work-runtime-ktx:$versions.libraries.workManager",
+
+        // room
+        room                 : "androidx.room:room-runtime:$versions.libraries.room",
+        roomCompiler         : "androidx.room:room-compiler:$versions.libraries.room",
+        roomRxjava           : "androidx.room:room-rxjava2:$versions.libraries.room",
+
+        // dagger
+        dagger               : "com.google.dagger:dagger:$versions.libraries.dagger",
+        daggerProcessor      : "com.google.dagger:dagger-compiler:$versions.libraries.dagger",
+
+        // rxjava
+        rxjava               : "io.reactivex.rxjava2:rxjava:$versions.libraries.rxjava",
+        rxandroid            : "io.reactivex.rxjava2:rxandroid:$versions.libraries.rxandroid",
+        rxkotlin             : "io.reactivex.rxjava2:rxkotlin:$versions.libraries.rxkotlin",
+        rxRelay              : "com.jakewharton.rxrelay2:rxrelay:$versions.libraries.rxRelay",
+
+        // network
+        okhttp               : "com.squareup.okhttp3:okhttp:$versions.libraries.okhttp",
+        retrofit             : "com.squareup.retrofit2:retrofit:$versions.libraries.retrofit",
+        retrofitGsonConverter: "com.squareup.retrofit2:converter-gson:$versions.libraries.retrofit",
+        retrofitRxjava       : "com.squareup.retrofit2:adapter-rxjava2:$versions.libraries.retrofitRxjava",
+
+        glide                : "com.github.bumptech.glide:glide:$versions.libraries.glide",
+        glideCompiler        : "com.github.bumptech.glide:compiler:$versions.libraries.glide",
+
+        stetho               : "com.facebook.stetho:stetho:$versions.libraries.stetho",
+        stethoOkhttp         : "com.facebook.stetho:stetho-okhttp3:$versions.libraries.stetho",
+
+        timber               : "com.jakewharton.timber:timber:$versions.libraries.timber",
+        threeTenAbp          : "com.jakewharton.threetenabp:threetenabp:$versions.libraries.threeTenAbp",
+
+        // testing library
+        junit                : "junit:junit:$versions.libraries.junit",
+        testRunner           : "androidx.test:runner:$versions.libraries.testRunner",
+        espressoCore         : "androidx.test.espresso:espresso-core:$versions.libraries.espressoCore",
+        arcTesting           : "androidx.arch.core:core-testing:$versions.libraries.architectureComponent",
+        roomTesting          : "androidx.room:room-testing:$versions.libraries.room",
+        navigationTesting    : "android.arch.navigation:navigation-testing-ktx:$versions.libraries.navVersion",
+        workerTesting        : "android.arch.work:work-testing:$versions.libraries.workManager"
+
+]
