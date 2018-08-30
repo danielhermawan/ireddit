@@ -1,7 +1,8 @@
 def versions = [
         plugin   : [
-                androidGradle: '3.2.0-rc02',
-                kotlin       : "1.2.61"
+                androidGradle      : '3.2.0-rc02',
+                kotlin             : "1.2.61",
+                navigationSafeArgs : "1.0.0-alpha03"
         ],
         libraries: [
                 // code library
@@ -41,13 +42,14 @@ ext.buildInfo = [
 ]
 
 ext.gradlePlugin = [
-        androidGradle: "com.android.tools.build:gradle:$versions.plugin.androidGradle",
-        kotlin       : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.plugin.kotlin"
+        androidGradle      : "com.android.tools.build:gradle:$versions.plugin.androidGradle",
+        kotlin             : "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.plugin.kotlin",
+        navigationSafeArgs : "android.arch.navigation:navigation-safe-args-gradle-plugin:$versions.plugin.navigationSafeArgs"
 ]
 
 ext.libraries = [
         // android core library
-        kotlinStdlib         : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.plugin.kotlin",
+        kotlinStdlib         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.plugin.kotlin",
         appCompat            : "androidx.appcompat:appcompat:$versions.libraries.supportLibrary",
         recyclerView         : "androidx.recyclerview:recyclerview:$versions.libraries.supportLibrary",
         design               : "com.google.android.material:material:$versions.libraries.supportLibrary",
