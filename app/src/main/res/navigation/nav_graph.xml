@@ -3,28 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="co.folto.ireddit.HomeFragment"
+    app:startDestination="@id/homeController">
+
+    <ControllerNavigator
+        android:id="@+id/homeController"
         android:label="Home"
+        app:name="co.folto.ireddit.HomeController"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_detailFragment"
-            app:destination="@id/detailFragment"
+            android:id="@+id/action_homeController_to_detailController"
+            app:destination="@id/detailController"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/fade_in"
             app:popExitAnim="@anim/fade_out" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="co.folto.ireddit.DetailFragment"
+    </ControllerNavigator>
+
+    <ControllerNavigator
+        android:id="@+id/detailController"
         android:label="Detail"
+        app:name="co.folto.ireddit.DetailController"
         tools:layout="@layout/fragment_detail">
         <argument
             android:name="text"
             android:defaultValue="title"
             app:type="string" />
-    </fragment>
+    </ControllerNavigator>
 </navigation>

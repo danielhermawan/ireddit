@@ -37,6 +37,7 @@ dependencies {
     api libraries.vector
     api libraries.constraintLayout
     api libraries.annotations
+    api libraries.coreKtx
 
     // architecture component libraries
     api  libraries.lifecycle
